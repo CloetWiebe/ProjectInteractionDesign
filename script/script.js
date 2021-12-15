@@ -71,6 +71,13 @@ const makeChart= function(){
 	);
 
 };
+
+const placeText = function(){
+	console.log('place text')
+	document.querySelector('.js-shen').innerText= `Mastery points: ${masteryChamp1}`
+	document.querySelector('.js-syndra').innerText= `Mastery points: ${masteryChamp2}`
+	document.querySelector('.js-maokai').innerText= `Mastery points: ${masteryChamp3}`
+};
 const init= function(){
 	console.log('DOM Geladen')
 	//Champ1
@@ -97,5 +104,6 @@ const init= function(){
 	totalMastery=datachamp['totalmastery']
 	// console.log(totalMastery)
 	makeChart()
+	placeText()
 };
 document.addEventListener('DOMContentLoaded', init)
