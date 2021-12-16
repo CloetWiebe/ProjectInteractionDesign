@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Mastery Checker</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
@@ -16,8 +16,8 @@
     <meta name="msapplication-config" content="favicons/browserconfig.xml" />
     <meta name="theme-color" content="#B669BF" />
 
+    <script src="https://kit.fontawesome.com/6d1cfe8003.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.typekit.net/dus7abz.css" />
-
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/screen.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -27,6 +27,14 @@
     <div class="c-site">
       <div class="c-site__header">
         <h1 class="c-header-name">Mastery Checker</h1>
+        <div class="c-toggle-button">
+          <input type="checkbox" class="checkbox" id="checkbox">
+          <label for="checkbox" class="label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+          </label>
+        </div>
       </div>
       <div class="c-site__main">
         <div class="o-row">

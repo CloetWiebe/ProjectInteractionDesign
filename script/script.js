@@ -28,6 +28,7 @@ const makeChart = function () {
         data: [masteryChamp1, masteryChamp2, masteryChamp3, otherChamps],
         backgroundColor: ['#39BF6E', '#FFB640', '#9B4BA6', '#A595A6'],
         cutout: '90%',
+        borderWidth:[0,0,0,0],
       },
     ],
   };
@@ -74,6 +75,17 @@ const placeText = function () {
   document.querySelector('.js-syndra').innerText = `Mastery points: ${masteryChamp2}`;
   document.querySelector('.js-maokai').innerText = `Mastery points: ${masteryChamp3}`;
 };
+
+const listenToCheckbox= function(){
+  console.log('Listen to toggle')
+  const checkbox= document.getElementById('checkbox');
+  const site = document.querySelector('.c-site');
+  checkbox.addEventListener('change', function(){
+    console.log('change')
+    site.classList.toggle('c-site--dark')
+  })
+};
+
 const init = function () {
   console.log('DOM Geladen');
   //Champ1
@@ -101,5 +113,6 @@ const init = function () {
   // console.log(totalMastery)
   makeChart();
   placeText();
+  listenToCheckbox();
 };
 document.addEventListener('DOMContentLoaded', init);
