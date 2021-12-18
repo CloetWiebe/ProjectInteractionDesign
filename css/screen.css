@@ -10,6 +10,7 @@
   --global-root-font-size: 16;
   /* colors*/
   --global-color-alpha: #b669bf;
+  --global-color-x-alpha: #B669BF;
   --global-color-dark: #585059;
   --global-color-x-dark: #4c454d;
   --global-color-x-light: #fcf9fc;
@@ -18,6 +19,7 @@
   --global-background: var(--global-color-light);
   --global-background-card: var(--global-color-x-light);
   --global-color-text: var(--global-color-black);
+  --global-color-ball:#8B7E8C;
 
   --global-baseline: calc(1rem / 2); /*8px*/
   --global-whitespace-xxs: calc(var(--global-baseline) / 2); /*4px*/
@@ -70,7 +72,7 @@ img {
 }
 
 .label {
-  background-color: #111;
+  background-color: var(--global-color-x-light);
   display: flex;
   border-radius: 50px;
   width: calc(var(--global-whitespace-xl) * 2);
@@ -78,17 +80,18 @@ img {
   padding: var(--global-whitespace-xs);
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .fa-moon {
-  color: #f1c40f;
+  color: var(--global-color-x-alpha);
 }
 
 .fa-sun {
-  color: #f1c40f;
+  color: var(--global-color-x-alpha);
 }
 .ball {
-  background-color: #fff;
+  background-color: var(--global-color-ball);
   position: absolute;
   width: var(--global-whitespace-lg);
   height: var(--global-whitespace-lg);
@@ -151,12 +154,21 @@ img {
 
 .c-dashboard {
   display: grid;
+  grid-gap: var(--global-whitespace-md);
+  margin-bottom: var(--global-whitespace-xl);
+}
+
+@media screen and (min-witdh: 62rem){
+  .c-dashboard {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
   column-gap: var(--global-whitespace-xl);
   row-gap: var(--global-whitespace-md);
   margin-bottom: var(--global-whitespace-xl);
+  }
 }
+
 .c-dashboard__item {
   box-shadow: var(--global-box-shadow);
   background-color: var(--global-background-card);
@@ -206,6 +218,12 @@ img {
 #UTILITIES
 \*------------------------------------*/
 
+
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+@media(min-width: 992px){
 /*----------  u-champbox  ----------*/
 
 .u-champbox-1 {
@@ -227,7 +245,4 @@ img {
   grid-column: 1;
   grid-row: 1/4;
 }
-
-/*------------------------------------*\
-#MEDIA
-\*------------------------------------*/
+}

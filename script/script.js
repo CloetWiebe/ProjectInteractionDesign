@@ -17,7 +17,17 @@ const datachamp = {
 };
 let nameChamp1, nameChamp2, nameChamp3, masteryChamp1, masteryChamp2, masteryChamp3, otherChamps, totalMastery;
 
-const makeChart = function () {
+const listenToCheckbox= function(){
+  console.log('Listen to toggle')
+  const checkbox= document.getElementById('checkbox');
+  const site = document.querySelector('.c-site');
+  checkbox.addEventListener('change', function(){
+    console.log('change')
+    site.classList.toggle('c-site--dark')
+  })
+};
+
+const makeChart= function () {
   console.log('Make Chart Go');
   //setup block
   const data = {
@@ -42,10 +52,10 @@ const makeChart = function () {
         chartArea: { top, right, botto, left, width, height },
       } = chart;
       ctx.save();
-      ctx.fillStyle = '#19171A';
+      ctx.fillStyle = options.fontColor;
       //1 how to get position
       //2 how to write text and automate text
-      ctx.font = '24px semplicitapro';
+      ctx.font = options.fontSize + ' ' + options.fontFamily;
       ctx.textAlign = 'center';
       ctx.text;
       ctx.fillText(`${totalMastery} Total Mastery`, width / 2, top + height / 2);
@@ -60,13 +70,52 @@ const makeChart = function () {
   const config = {
     type: 'doughnut',
     data,
-    options: {},
+    options: {
+      plugins:{
+        counter:{
+          fontColor: '#19171A',
+          fontSize: '24px',
+          fontFamily: 'semplicitapro',
+        },
+        legend: {
+         labels:{
+           color: '#19171A',
+           font:{
+             family: 'semplicitapro'
+           }
+         }
+        }
+      }
+    },
     plugins: [counter],
   };
 
   //render init block
   Chart.defaults.font.size = 20;
   const myChart = new Chart(document.getElementById('myChart'), config);
+  const checkbox= document.getElementById('checkbox');
+  checkbox.addEventListener('change', function(){
+    // console.log('Chart')
+    // console.log('Destroy chart')
+    let dark = document.querySelector('.c-site--dark')
+    console.log(dark)
+    if(dark != null){
+      console.log('Dark')
+      let colorOtherChamp = '#A595A6'
+      let textColor = '#19171A'
+      myChart.options.plugins.legend.labels.color = `${textColor}`
+      myChart.options.plugins.counter.fontColor = `${textColor}`
+      myChart.update()
+    }
+    else if(dark == null){
+      console.log('Light')
+      let colorOtherChamp = '#F6E6F7'
+      let textColor = '#FCF7FC'
+      myChart.options.plugins.legend.labels.color= `${textColor}`
+      myChart.options.plugins.counter.fontColor = `${textColor}`
+      myChart.update()
+    }
+  })
 };
 
 const placeText = function () {
@@ -74,16 +123,6 @@ const placeText = function () {
   document.querySelector('.js-shen').innerText = `Mastery points: ${masteryChamp1}`;
   document.querySelector('.js-syndra').innerText = `Mastery points: ${masteryChamp2}`;
   document.querySelector('.js-maokai').innerText = `Mastery points: ${masteryChamp3}`;
-};
-
-const listenToCheckbox= function(){
-  console.log('Listen to toggle')
-  const checkbox= document.getElementById('checkbox');
-  const site = document.querySelector('.c-site');
-  checkbox.addEventListener('change', function(){
-    console.log('change')
-    site.classList.toggle('c-site--dark')
-  })
 };
 
 const init = function () {
