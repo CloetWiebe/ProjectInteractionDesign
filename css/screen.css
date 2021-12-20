@@ -108,7 +108,7 @@ img {
 \*------------------------------------*/
 .o-row {
   position: relative;
-  padding: var(--global-whitespace-md) var(--global-whitespace-md) var(--global-baseline);
+  padding: var(--global-whitespace-xl) var(--global-whitespace-md) var(--global-baseline);
 }
 
 .o-container {
