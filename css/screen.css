@@ -128,7 +128,6 @@ img {
   max-width: 100%;
 }
 .c-site__main{
-    padding:var(--global-whitespace-lg);
     max-width: 100%;
   
 }
@@ -198,18 +197,15 @@ img {
 .c-card-picture {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: var(--global-whitespace-sm);
-  box-shadow: 3px 0 5px -5px #333;
+  box-shadow: 3px 0 5px -5px var(--global-color-text);
 }
 
 .c-card-picture__title {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: var(--global-whitespace-sm);
-  padding-top: none;
+  padding: 0 var(--global-whitespace-sm) var(--global-whitespace-sm);
   font-size: var(--global-whitespace-md);
   font-weight: 600;
   color: var(--global-color-text);
