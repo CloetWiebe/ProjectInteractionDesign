@@ -68,6 +68,7 @@ const makeChart = function () {
     type: 'doughnut',
     data,
     options: {
+      maintainAspectRatio: false,
       plugins: {
         counter: {
           fontColor: '#19171A',
