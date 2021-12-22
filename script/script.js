@@ -55,8 +55,8 @@ const makeChart = function () {
       ctx.font = options.fontSize + ' ' + options.fontFamily;
       ctx.textAlign = 'center';
       ctx.text;
-      ctx.fillText(totalMastery, width / 2, ((top + height / 2)- parseInt(options.fontSize)/2));
-      ctx.fillText('Total Mastery', width / 2, ((top + height / 2)+ parseInt(options.fontSize)/2));
+      ctx.fillText(totalMastery, width / 2, ((top + height / 2)- parseInt(options.fontSize)/1.5));
+      ctx.fillText('Total Mastery', width / 2, ((top + height / 2)+ parseInt(options.fontSize)/1.5));
       // x0 = starting point on the horizontal level l/r
       // y0 = starting point verical level t/b
       // x1 = length of the shape in pixels horizontal
