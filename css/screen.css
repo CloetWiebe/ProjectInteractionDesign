@@ -83,6 +83,10 @@ img {
   position: relative;
 }
 
+.checkbox:focus + .label{
+  border: 3px solid #660073;
+}
+
 .fa-moon {
   color: var(--global-color-x-alpha);
 }
