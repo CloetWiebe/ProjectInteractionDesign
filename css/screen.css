@@ -34,6 +34,14 @@
   --global-box-shadow-dark: 0 0 0 1px #716773;
   --global-box-shadow: var(--global-box-shadow-light);
 }
+@media (prefers-color-scheme: dark) {
+:root{
+  --global-background-card: var(--global-color-dark);
+  --global-background: var(--global-color-x-dark);
+  --global-box-shadow: var(--global-box-shadow-dark);
+  --global-color-text: var(--global-color-x-light);
+}
+}
 /*------------------------------------*\
 #GENERIC
 \*------------------------------------*/
